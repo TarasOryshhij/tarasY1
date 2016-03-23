@@ -1,0 +1,13 @@
+<resources>
+    <string name="tittle">Комунальне господарство</string>
+    <string name="status">В роботi</string>
+    <string name="created">Створено</string>
+    <string name="created_date">25 лютого 2016</string>
+    <string name="registered">Зареєстровано</string>
+    <string name="register_date">26 лютого 2016</string>
+    <string name="resolve">Вирiшити до</string>
+    <string name="resolve_date">29 лютого 2016</string>
+    <string name="responsible">Вiдповiдальний</string>
+    <string name="responsible_text">Днiпропетровський МВК()</string>
+    <string name="note">Відкритий люк (біля рекламного щита), район повороту 18 і 19 трамваїв на проспект Миру iз Донецького шосе</string>
+</resources>

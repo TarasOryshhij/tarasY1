@@ -1,0 +1,13 @@
+<resources>
+    <string name="tittle">Коммунальное хозяйство</string>
+    <string name="status">В роботе</string>
+    <string name="created">Создано</string>
+    <string name="created_date">25 февраля 2016</string>
+    <string name="registered">Зарегистрировано</string>
+    <string name="register_date">26 февраля 2016</string>
+    <string name="resolve">Решить до</string>
+    <string name="resolve_date">29 февраля 2016</string>
+    <string name="responsible">Ответственный</string>
+    <string name="responsible_text">Днепропетровский РВК()</string>
+    <string name="note">Открытый люк (возле рекламного счита), район поворота 18 и 19 трамваев на проспект Мира с Донецкого шоссе</string>
+</resources>
