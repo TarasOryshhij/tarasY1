@@ -38,7 +38,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        Context context = holder.mImageView.getContext();
+        final Context context = holder.mImageView.getContext();
 
         Picasso.with(context)
                 .load(Uri.parse(mDataset[position]))
@@ -46,6 +46,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                 .centerCrop()
                 .into(holder.mImageView);
 
+        final String message = mDataset[position];
+
+        holder.mImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogUtils.show(context, message);
+            }
+        });
     }
 
     // Return the size of your dataset (invoked by the layout manager)
