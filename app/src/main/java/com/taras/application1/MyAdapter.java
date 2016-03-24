@@ -9,12 +9,12 @@ import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> { //[Comment] Your adapter? Use correct names
     private String[] mDataset;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public ImageView mImageView;
+        public ImageView mImageView; //[Comment] Wrong visibility modifier. Wrong formatting
         public ViewHolder(View v) {
             super(v);
             mImageView = (ImageView) v;

@@ -18,10 +18,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+//[Comment] Wrong bottom padding
+//[Comment] Label "In work" is cutted off.
+//[Comment] Dividers are too transparent
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private TextView tv_tittle, tv_status, tv_created, tv_created_date, tv_registered, tv_reg_date,
-            tv_resolve, tv_resolve_date, tv_responsible, tv_resp_date, tv_note;
+            tv_resolve, tv_resolve_date, tv_responsible, tv_resp_date, tv_note; //[Comment] Wrong names. Use google code style
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initListeners() {
-        tv_tittle.setOnClickListener(this);
+        tv_tittle.setOnClickListener(this); //[Comment] Just findViewById(R.id.tv_tittle).setOnClickListener(this)
         tv_status.setOnClickListener(this);
         tv_created.setOnClickListener(this);
         tv_created_date.setOnClickListener(this);
@@ -73,15 +76,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void makeRecyclerView() {
-        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.card_view);
+        RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.card_view); //[Comment] without m. It's local variable
 
         // use a linear layout manager
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false); //[Comment] without m. It's local variable
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        String[] myDataset = {getString(R.string.first_image), getString(R.string.second_image)};
+        String[] myDataset = {getString(R.string.first_image), getString(R.string.second_image)}; //[Comment] without m. It's local variable
 
-        RecyclerView.Adapter mAdapter = new MyAdapter(myDataset);
+        RecyclerView.Adapter mAdapter = new MyAdapter(myDataset); //[Comment] without m. It's local variable
         mRecyclerView.setAdapter(mAdapter);
 
         ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(this, R.dimen.activity_horizontal_margin);
@@ -93,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()){
             case R.id.tv_tittle:
-                DialogUtils.show(getApplicationContext(), tv_tittle.getText().toString());
+                DialogUtils.show(getApplicationContext(), tv_tittle.getText().toString()); //[Comment] Wrong information. Control name is for Example TextView, ImageView
                 break;
             case R.id.tv_status:
                 DialogUtils.show(getApplicationContext(), tv_status.getText().toString());
@@ -125,11 +128,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.tv_note:
                 DialogUtils.show(getApplicationContext(), tv_note.getText().toString());
                 break;
-
+        //[Comment] Copy/Paste code
         }
     }
 
-    public class ItemOffsetDecoration extends RecyclerView.ItemDecoration {
+    public class ItemOffsetDecoration extends RecyclerView.ItemDecoration { //[Comment] It shouldn't be internal class
 
         private int mItemOffset;
 
@@ -147,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             int childCount = parent.getChildCount();
             for (int i = 0; i < childCount; i++) {
-                if(i!=0) {
+                if(i!=0) { //[Comment] wrong formatting
                     outRect.left = mItemOffset;
                 }
             }

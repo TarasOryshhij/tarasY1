@@ -164,4 +164,7 @@
         </LinearLayout>
     </ScrollView>
 
+    <!-- [Comment] Hardcode -->
+    <!-- [Comment] Use styles -->
+
 </RelativeLayout>

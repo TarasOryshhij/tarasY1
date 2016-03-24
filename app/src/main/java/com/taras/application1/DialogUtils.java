@@ -5,7 +5,7 @@ import android.widget.Toast;
 
 public class DialogUtils {
 
-    private static Toast mToast;
+    private static Toast mToast; //[Comment] Why so difficult? Use just Toast.makeText
 
     public static void show(Context context, String message) {
         if (message == "") {
