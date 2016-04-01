@@ -3,4 +3,13 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="image_size">250dp</dimen>
+
+    <!-- Text size. -->
+    <dimen name="main_text_size_title">16sp</dimen>
+    <dimen name="main_text_size">14sp</dimen>
+
+    <!-- Rounded. -->
+    <dimen name="rounded">10dp</dimen>
+    <dimen name="radius">300dp</dimen>
+
 </resources>

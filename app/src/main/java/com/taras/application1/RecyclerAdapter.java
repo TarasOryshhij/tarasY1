@@ -1,4 +1,5 @@
 package com.taras.application1;
+
 import android.content.Context;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
@@ -6,28 +7,30 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
+
     private String[] mDataset;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public ImageView mImageView;
-        public ViewHolder(View v) {
+        private ImageView imageView;
+        private ViewHolder(View v) {
             super(v);
-            mImageView = (ImageView) v;
+            imageView = (ImageView) v;
         }
     }
 
-    public MyAdapter(String[] myDataset) {
+    public RecyclerAdapter(String[] myDataset) {
         mDataset = myDataset;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.image, parent, false);
         // set the view's size, margins, paddings and layout parameters
@@ -38,20 +41,20 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        final Context context = holder.mImageView.getContext();
+        final Context context = holder.imageView.getContext();
 
         Picasso.with(context)
                 .load(Uri.parse(mDataset[position]))
                 .fit()
                 .centerCrop()
-                .into(holder.mImageView);
+                .into(holder.imageView);
 
         final String message = mDataset[position];
 
-        holder.mImageView.setOnClickListener(new View.OnClickListener() {
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogUtils.show(context, message);
+                Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
             }
         });
     }
